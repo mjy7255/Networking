@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Question Set</title>
+	<script language="javascript">
+		function Output(form)
+		{
+			var strInfo= "";
+			var valInfo= "";
+			console.log(strInfo);
+			var val1;
+			var val2;
+			var val3;
+			var val4;
+			var val5;
+			
+			val1 = form.hobby[0].checked | form.hobby[1].checked | form.hobby[2].checked | form.hobby[3].checked;
+			val2 = form.capital.value;
+			val3 = form.continent[0].checked | form.continent[1].checked | form.continent[2].checked | form.continent[3].checked;
+			val4 = form.insect[0].checked | form.insect[1].checked | form.insect[2].checked | form.insect[3].checked;
+			val5 = form.kind[0].checked | form.kind[1].checked | form.kind[2].checked | form.kind[3].checked;
+			
+			if (val1){
+				if(form.hobby[1].checked)
+					strInfo +="1번 : 정답 <br>";
+				else
+					strInfo +="1번 : 오답 <br>";				
+			}else{
+				valInfo+= "1번문제 공백 \n";
+			}
+			
+			if(val2 != ""){
+				if(form.capital.value == "서울")
+					strInfo +="2번 : 정답 <br>";
+				else
+					strInfo +="2번 : 오답<br>";
+					val2 =1
+			}else{
+				valInfo+="2번문제 공백\n";
+			}
+			
+			if(val3){
+				if(form.continent[1].checked)
+					strInfo +="3번 : 정답 <br>" ;
+				else
+					strInfo +="3번 : 오답 <br>";
+			}else{
+				valInfo+="3번문제 공백\n";
+			}
+			
+			if(val4){
+				if(form.insect[3].checked)
+					strInfo +="4번 : 정답 <br>";
+				else
+					strInfo +="4번 : 오답<br>";
+			}else{
+				valInfo +="4번문제 공백\n";
+			}
+			if(val5){
+				if(form.kind[1].checked)
+					strInfo +="5번 : 정답 <br>";
+				else
+					strInfo +="5번 : 오답 <br>";
+			}else{
+				valInfo +="5번문제 공백 \n";
+			}
+			if(val1 & val2 & val3 & val4 &val5){
+				document.write(strInfo);
+			}
+			else{
+				alert(valInfo);	
+			}
+					
+			
+		}
+		
+		
+	</script>
+</head>
+<body>
+	<form name="form">
+		광복절??
+		<input type="radio" name="hobby" value="10월3일">10월3일
+		<input type="radio" name="hobby" value="8월15일">8월15일
+		<input type="radio" name="hobby" value="3월1일">3월1일
+		<input type="radio" name="hobby" value="12월25일">12월25일<br>
+		
+		대한민국의 수도?
+		<input type="text" name="capital" size="20"><br>
+		
+		아시아??
+		<input type="radio" name="continent" value="미국">미국
+		<input type="radio" name="continent" value="중국">중국
+		<input type="radio" name="continent" value="멕시코">멕시코
+		<input type="radio" name="continent" value="영국">영국<br>
+		
+		곤충??
+		<input type="radio" name="insect" value="독수리">독수리
+		<input type="radio" name="insect" value="코끼리">코끼리
+		<input type="radio" name="insect" value="거북이">거북이
+		<input type="radio" name="insect" value="사마귀">사마귀<br>
+		
+		고래는??
+		<input type="radio" name="kind" value="파충류">파충류
+		<input type="radio" name="kind" value="포유류">포유류
+		<input type="radio" name="kind" value="갑각류">갑각류
+		<input type="radio" name="kind" value="조류">조류<br>
+		
+		<input type="button" name="but" value="제출" onClick="Output(this.form)">
+	</form>
+
+</body>
+</html>

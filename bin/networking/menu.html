@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Menu</title>
+
+	<script>
+	function down_count(){
+		var cnt = document.form1.but.value;
+		document.form1.but.value = cnt -1;
+		parent.right.form1.but.value = cnt-1;
+		//parent.frames['right'].location.href="image1.html";
+
+		
+	}
+	</script>
+</head>
+<body>
+첫번째 프레임
+<form name="form1">
+		name : <input type="text" name="name"><br/>
+		age : <input type="number" name="age" ><br>
+		<input type="button" value=1000 onClick="down_count()" name="but">
+</form>
+</body>
+</html>

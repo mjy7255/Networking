@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Menu</title>
+
+</head>
+<body>
+첫번째 프레임
+name : <input type="text" name="name"><br/>
+age : <input type="number" name="age" ><br>
+	<script>
+	function left(){
+		//parent.right.location.href ="image1.html";
+		var cnt = document.getElementById("but");
+		var i = Number(cnt.value);
+		cnt.value = String(i-1);
+		parent.right.document.getElementById("but2").setAttribute("value",cnt.value);
+
+		
+	}
+document.write('<input type="button" id="but" value="100" onClick=left()>');
+	</script>
+</body>
+</html>
